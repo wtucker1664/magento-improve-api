@@ -23,7 +23,7 @@ class Bubble_Api_Helper_Catalog_Product extends Mage_Core_Helper_Abstract
                 ->addFilterByRequiredOptions()
                 ->getAllIds();
 
-            $usedProductIds = array_diff($newProductIds, $oldProductIds);
+            $usedProductIds = array_diff($newProductIds, $oldProductIds); // This line will assign a new product and unasign any products already assigned array_merge($oldProductIds,$newProductIds) will keep any assigned products and assign new ones.
 
             if (!empty($usedProductIds)) {
                 if ($product->isConfigurable()) {
